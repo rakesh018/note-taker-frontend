@@ -6,7 +6,7 @@ window.addEventListener("load",()=>{
     //if token exists we can directly redirect user to dashboard section
     const token=localStorage.getItem("jwt");
     if(token){
-        location.href="";
+        location.href="/";
     }
 });
 signInSignUpButton.addEventListener("click",()=>{

@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*above three lines are to remove default margin,padding,boxsizing*/
+  font-family: "Poppins", sans-serif;
+  color: white; /*to make all font white*/
+}
+body {
+  overflow: hidden; /*to prevent scrolling and overflow to be not shown*/
+  min-height: 100vh; /*height should not go below 100 vh */
+  width: 100%;
+  background: linear-gradient(55deg, #000000, #4ab3ff);
+  opacity: 0; /*after 2 seconds of loading we will make its opacity to 1*/
+  transition: all 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.visible {
+  opacity: 1;
+}
+.create-notes-container {
+  /*we will give it some kind of glassmorphic effect*/
+  width: 400px;
+  height: 450px; /*we could give minumum height but its children cannot be given in terms of % for width or height if we use min height*/
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid white;
+  border-radius: 15px;
+  /*cuz everything in this container is aligned vertically and centred horizontally*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.heading {
+  font-weight: bold;
+  font-size: 35px;
+}
+.create-note-input {
+  border: none;
+  width: 80%;
+  height: 50%;
+  border-radius: 20px;
+  color: black;
+  padding: 10px;
+  font-size: 18px;
+  display: flex;
+  align-items: start;
+  text-align: center;
+}
+.create-note-input:focus {
+  outline: none;
+  /*this is to remove the border when clicked on text box*/
+}
+.create-note-button {
+  background: transparent;
+  padding: 10px;
+  border-radius: 15px;
+  border: 2px solid white;
+  cursor: pointer;
+}
+.create-note-button:hover {
+  transform: scale(1.05);
+  transition: ease-in-out;
+}
+.note-heading {
+  border: none;
+  width: 80%;
+  height: 10%;
+  border-radius: 20px;
+  color: black;
+  padding: 10px;
+  font-size: 18px;
+  display: flex;
+  align-items: start;
+  text-align: center;
+}
+.note-heading:focus {
+  outline: none;
+}
+@media only screen and (max-width:750px){
+  .create-notes-container{
+    width: 250px;
+    height: 400px;
+  }
+}

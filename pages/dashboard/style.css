@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*above three lines are to remove default margin,padding,boxsizing*/
+  font-family: "Poppins", sans-serif;
+  color: white; /*to make all font white*/
+}
+body {
+  overflow: hidden; /*to prevent scrolling and overflow to be not shown*/
+  min-height: 100vh; /*height should not go below 100 vh */
+  width: 100%;
+  background: linear-gradient(55deg, #190c46, #101316);
+  opacity: 0; /*after 2 seconds of loading we will make its opacity to 1*/
+  transition: all 1s ease-in-out;
+}
+.visible {
+  opacity: 1;
+}
+/*above three styling are same as from homepage ones*/
+nav {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+}
+.welcome {
+  font-size: 40px;
+  font-weight: bold;
+}
+.nav-controls {
+  display: flex;
+}
+.nav-options {
+  background: rgba(255, 255, 255, 0.4); /*for glass effect 0.4 opacity*/
+  padding: 10px;
+  border-radius: 15px;
+  border: 1px solid white;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  cursor: pointer;
+  margin-left: 15px;
+}
+.card-container {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0 80px; /*cuz upper section nav also been given same padding so that both look symmetrical*/
+  padding-top: 20px;
+}
+.card {
+  width: 225px;
+  height: 275px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.4); /*for glass effect 0.4 opacity*/
+  border-radius: 15px;
+  border: 1px solid white;
+  border-style: hidden;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.card-hover{
+  width: 50%;
+  height: 50%;
+}
+.card-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-heading {
+  font-weight: bold;
+  font-size: 20px;
+}
+.edit-note {
+  height: 22px;
+  cursor: pointer;
+}
+.delete-note {
+  height: 22px;
+  cursor: pointer;
+}
+.edit-note > img {
+  height: 100%;
+  width: 100%;
+}
+.delete-note > img {
+  height: 100%;
+  width: 100%;
+}
+.note-update-delete-containers{
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+.card-content {
+  font-size: 14px;
+  margin-top: 10px;
+  width: 100%;
+  height: 190px;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 15px;
+  word-break: break-word;
+  /*if more text is there it will be scrolling*/
+  overflow: auto;
+}
+.empty-notes-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.empty-notes-svg {
+  width: 70%;
+  height: 70%;
+  /*transform: translateY(-50px);*/
+}
+.empty-notes-warning {
+  font-size: 20px;
+  font-weight: bold;
+}
+#particles-js{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -5;
+}
+@media only screen and (max-width:750px){
+  .main-container{
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  nav{
+    margin-top: 5px;
+    padding: 0 25px;
+  }
+  .welcome{
+    font-size: 25px;
+  }
+  .nav-options{
+    padding: 0;
+    font-size: 10px;
+    text-align: center;
+  }
+  .logout{
+    display: flex;
+    align-items: center;
+    padding: 7px;
+  }
+  .card-container{
+    gap: 20px;
+  }
+
+}
